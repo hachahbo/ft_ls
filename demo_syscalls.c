@@ -34,6 +34,8 @@ int main(void) {
     printf("------------------------------------------------------------------------\n");
 
     // 2. readdir: Read entries one by one
+
+    
     while ((entry = readdir(dir)) != NULL) {
         // 3. stat: Get metadata for the file
         if (stat(entry->d_name, &file_stat) == -1) {
