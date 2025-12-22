@@ -64,4 +64,43 @@ To ensure a robust architecture, the development followed this priority order:
 ---
 
 ## 📚 Resources
-* **Man pages:** `man 3 opendir`, `man 2 stat`, `man 3 ctime`.
+
+### Essential Man Pages
+* **Directory Operations:** `man 3 opendir`, `man 3 readdir`, `man 3 closedir`
+* **File Metadata:** `man 2 stat`, `man 2 lstat`, `man 2 fstat`
+* **User/Group Info:** `man 3 getpwuid`, `man 3 getgrgid`
+* **Time Functions:** `man 2 time`, `man 3 ctime`, `man 3 localtime`
+* **Symbolic Links:** `man 3 readlink`
+* **Error Handling:** `man 3 perror`, `man 3 strerror`, `man 3 errno`
+* **Memory:** `man 3 malloc`, `man 3 free`
+
+### System Programming Guides
+* [The Linux Programming Interface](http://man7.org/tlpi/) - Comprehensive guide to Linux/Unix system programming
+* [GNU C Library - File System Interface](https://www.gnu.org/software/libc/manual/html_node/File-System-Interface.html)
+* [POSIX.1-2017 Standard](https://pubs.opengroup.org/onlinepubs/9699919799/) - Official specifications for system calls
+* [Advanced Linux Programming](https://mentorembedded.github.io/advancedlinuxprogramming/) - Chapter 8: Linux System Calls
+
+### File System Concepts
+* [Understanding Unix/Linux File Systems](https://www.kernel.org/doc/html/latest/filesystems/index.html) - Kernel documentation
+* [Inode Pointer Structure](https://en.wikipedia.org/wiki/Inode) - Understanding file metadata storage
+* [File Permissions](https://www.gnu.org/software/coreutils/manual/html_node/File-permissions.html) - How Unix permission bits work
+
+### Data Structures & Algorithms
+* [Linked Lists in C](https://www.learn-c.org/en/Linked_lists) - Essential for storing file entries
+* [Sorting Algorithms](https://www.geeksforgeeks.org/sorting-algorithms/) - Merge sort, quicksort for file ordering
+* [Lexicographic Ordering](https://en.cppreference.com/w/c/string/byte/strcmp) - For alphabetical file sorting
+
+### Testing & Validation
+* Compare your output with real `ls`: `./ft_ls -la | diff - <(ls -la)`
+* [ls Source Code (GNU Coreutils)](https://github.com/coreutils/coreutils/blob/master/src/ls.c) - Reference implementation
+* Test edge cases: Empty directories, permission denied, broken symlinks, very long filenames
+
+### Debugging Tools
+* **Valgrind:** `valgrind --leak-check=full ./ft_ls` - Memory leak detection
+* **GDB:** `gdb ./ft_ls` - Step-through debugging
+* **strace:** `strace ./ft_ls` - Trace system calls in real-time
+
+### Additional Learning
+* [Beej's Guide to C Programming](https://beej.us/guide/bgc/) - C language fundamentals
+* [File I/O in C](https://www.cprogramming.com/tutorial/cfileio.html) - Low-level file operations
+* [42 Docs - ft_ls](https://harm-smits.github.io/42docs/projects/ft_ls) - Community documentation
