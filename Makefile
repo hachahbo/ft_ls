@@ -38,6 +38,7 @@ $(LIBFT):
 
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@rm -f $(OBJS)
 	@echo "✅ ft_ls compiled successfully!"
 
 %.o: %.c
@@ -45,13 +46,19 @@ $(NAME): $(OBJS) $(LIBFT)
 
 clean:
 	@make -C $(LIBFT_DIR) clean
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 	@echo "🧹 Object files cleaned"
 
 fclean: clean
 	@make -C $(LIBFT_DIR) fclean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 	@echo "🧹 ft_ls cleaned"
+
+clean_all: clean
+	@echo "🧹 All object files cleaned (including libft)"
+
+fclean_all: fclean
+	@echo "🧹 Everything cleaned (including libft archive)"
 
 re: fclean all
 

@@ -43,6 +43,85 @@ The quality of the custom library (`libft`) significantly impacts the project wo
 
 ---
 
+## 🚀 Compilation
+
+### Prerequisites
+- GCC compiler
+- Make
+- Libft library (included in `Libft_42/`)
+
+### Build Commands
+
+```bash
+# Compile the project
+make
+
+# Clean object files
+make clean
+
+# Clean everything (objects + executable)
+make fclean
+
+# Recompile from scratch
+make re
+
+# Compile and run
+make run
+
+# Run basic tests
+make test
+```
+
+The compilation will produce an executable named `ft_ls`.
+
+---
+
+## 📖 Usage
+
+```bash
+./ft_ls [OPTIONS] [FILE...]
+```
+
+### Supported Flags
+
+| Flag | Description |
+| :--- | :--- |
+| `-l` | Long format listing (permissions, owner, group, size, date) |
+| `-a` | Include hidden files (those starting with `.`) |
+| `-r` | Reverse the order of the sort |
+| `-t` | Sort by modification time, newest first |
+| `-R` | Recursively list subdirectories |
+
+### Examples
+
+```bash
+# Basic listing of current directory
+./ft_ls
+
+# Show all files including hidden
+./ft_ls -a
+
+# Long format with details
+./ft_ls -l
+
+# Combine multiple flags
+./ft_ls -la
+
+# Sort by time in reverse order
+./ft_ls -lart
+
+# Recursive listing
+./ft_ls -R
+
+# List specific directories
+./ft_ls /tmp /home
+
+# All flags combined
+./ft_ls -laRt /path/to/directory
+```
+
+---
+
 ## 🏁 Implementation Stages
 
 To ensure a robust architecture, the development followed this priority order:
