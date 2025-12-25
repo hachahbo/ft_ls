@@ -183,3 +183,18 @@ To ensure a robust architecture, the development followed this priority order:
 * [Beej's Guide to C Programming](https://beej.us/guide/bgc/) - C language fundamentals
 * [File I/O in C](https://www.cprogramming.com/tutorial/cfileio.html) - Low-level file operations
 * [42 Docs - ft_ls](https://harm-smits.github.io/42docs/projects/ft_ls) - Community documentation
+
+
+main()
+  ↓
+parse_options() → Extract flags from command line
+  ↓
+list_directory()
+  ↓
+  ├─→ read_directory() → Build linked list of files
+  ├─→ sort_files()     → Sort the list
+  ├─→ display_files()  → Print to screen
+  ├─→ (if -R) Recursively process subdirectories
+  └─→ file_free()      → Clean up memory
+  ↓
+Exit
